@@ -1,18 +1,27 @@
 #include <stdio.h>
 
 int main() {
-    int Ortega[5][5];
+    int I, J;
 
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++) {
-            Ortega[i][j] = 0;
+    printf("Ingrese el numero de filas: ");
+    scanf("%d", &I);
+    printf("Ingrese el numero de columnas: ");
+    scanf("%d", &J);
+
+   int Ortega[I][J];
+
+    for (int i = 0; i < I; i++) {
+        for (int j = 0; j < J; j++) {
+            if (i == j)
+                Ortega[i][j] = 1;
+            else
+                Ortega[i][j] = 0;  
         }
     }
 
-    printf("Matriz Ortega de ceros:\n\n");
-
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++) {
+    printf("\nMatriz Ortega (%dx%d):\n\n", I, J);
+    for (int i = 0; i < I; i++) {
+        for (int j = 0; j < J; j++) {
             printf("%2d ", Ortega[i][j]);
         }
         printf("\n");
